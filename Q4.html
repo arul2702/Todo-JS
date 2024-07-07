@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <input type="text" id="todo" >
+    <button class="add" onclick="addtodo()">Add</button>
+    <ul id="list-container"></ul>
+  </body>
+  <script>
+      var container = document.getElementById("list-container");
+
+      function addtodo(){
+        var todoinp = document.getElementById("todo").value;
+        console.log(todoinp);
+        var list = document.createElement("li");
+        list.innerHTML = todoinp + "  <button class=\"deleteitem\" onclick=\"deleteitem(event)\">Delete</button>";
+        container.append(list);
+      }
+      function deleteitem(event){
+        event.target.parentElement.remove();  
+      }
+  </script>
+</html>
